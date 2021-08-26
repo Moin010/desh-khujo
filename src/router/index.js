@@ -1,17 +1,32 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 import CountryList from '../views/countryList.vue'
+import CountryInfo from '../views/countryInfo.vue'
+import NotFoundPage from '../views/404.vue'
 
 const routes = [
   {
     path: '/',
-    name: 'Country',
+    name: 'Home',
     component: CountryList
   },
   {
-    path: '/countrylist',
-    name: 'country',
+    path: '/country-list',
+    name: 'Country-List',
     component: CountryList
+  },
+  
+  {
+    path: '/about-country/:id',
+    name: 'CountryInfo',
+    component: CountryInfo,
+    props: true
+  },
+  // 404 page
+  {
+    path: '/:catchAll(.*)',
+    name: '404 page',
+    component: NotFoundPage
   }
   
  ,

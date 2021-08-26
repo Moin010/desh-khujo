@@ -7,10 +7,8 @@ export default createStore({
   state: {
     population: [],
     location: [],
-    flag: [],
     currencies: [],
     capital: [],
-    cities: [],
     codes: [],
     states: [],
     countries: []
@@ -22,25 +20,25 @@ export default createStore({
       state.countries = desh
     },
     SET_POPULATION (state, people){  
-      state.countries = people
+      state.population = people
     },
     SET_LOCATION (state, elaka){ 
-      state.countries = elaka
+      state.location = elaka
     },
     SET_FLAG (state, flag){   
-      state.countries = flag
+      state.flag = flag
     },
     SET_CURRENCIES (state, money){    
-      state.countries = money
+      state.currencies = money
     },
     SET_CAPITAL (state, rajdhani){      
-      state.countries = rajdhani
+      state.capital = rajdhani
     },
     SET_DIALCODES (state, code){     
-      state.countries = code
+      state.codes = code
     },
     SET_STATES (state, rajjo){     /* baki */
-      state.countries = rajjo
+      state.states = rajjo
     },
     
   },

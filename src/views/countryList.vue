@@ -1,43 +1,31 @@
 <template>
   <div id="countrylist">
-
-    <h1> World domination targets</h1>
-
-
+        <h1> Country Name List</h1>   
     <div v-for="country in countries">
-
-      router-link
-
-      <p> {{country.name}} </p>
+      <router-link :to="{ name: 'CountryInfo', params: {id: country.name}}">
+         <p> {{country.name}} </p>
+      </router-link>  
     </div>
-
-
   </div>
 </template>
 
 
 
+
 <script>
 
-
-
-export default {
-  data(){
-    return 
-  },
-  created(){
-    this.$store.dispatch('getCountry')
+  export default {
+    data(){
+     
     },
-  computed:{
-    countries: function () {
-      return this.$store.state.countries
+    created(){
+      this.$store.dispatch('getCountry')
     },
+    computed:{
+      countries() {
+        return this.$store.state.countries
+      },
+    }
 
-  },
-
-}
+  }
 </script>
-
-<style>
-
-</style>
