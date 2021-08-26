@@ -3,7 +3,6 @@ import axios from 'axios'
 
 
 
-
 export default createStore({
   state: {
     population: [],
@@ -13,21 +12,22 @@ export default createStore({
     capital: [],
     cities: [],
     codes: [],
-    states: []
+    states: [],
+    countries: []
 
 
   },
   mutations: {
-    SET_COUNTRIES (state, countries){
-      state.countries = countries
+    SET_COUNTRIES (state, desh){
+      state.countries = desh
     }
   },
   actions: {
     getCountry({ commit }) {
-      axios.get('https://countriesnow.space/api/v0.1/countries/positions')
+      axios.get('https://countriesnow.space/api/v0.1/countries/currency')
         .then( (data)=> {
-          console.log(data.data.data);
-          // commit('SET_COUNTRIES', data.country),
+          const desh = data.data.data;
+          commit('SET_COUNTRIES', desh)
         })
     }
   },

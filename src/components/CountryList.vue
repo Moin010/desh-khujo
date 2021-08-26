@@ -18,11 +18,10 @@ export default {
     name:"CountryList",
     mounted(){
 
-        axios.get('https://countriesnow.space/api/v0.1/countries/capital')
-        .then((respo)=>{
-            console.log(respo.data.name)
-        })
+
     }
+    
+
 }
 </script>
 
